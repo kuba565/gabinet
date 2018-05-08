@@ -21,9 +21,6 @@ cwallet.sso.lck### JetBrains template
 .idea/encodings.xml
 .mvn/wrapper/maven-wrapper.properties
 gabinet.iml
-mvnw
-mvnw.cmd
-
 
 .idea/vcs.xml
 .idea/**/workspace.xml

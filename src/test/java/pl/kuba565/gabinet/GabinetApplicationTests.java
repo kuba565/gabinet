@@ -1,4 +1,4 @@
-package pl.coderslab.gabinet;
+package pl.kuba565.gabinet;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
