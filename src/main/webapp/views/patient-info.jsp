@@ -36,6 +36,9 @@
             <td>${patient.pesel}</td>
             <td>${patient.phoneNumber}</td>
             <td>${patient.address}</td>
+            <td><a href="/patient/visit/add/${patient.id}">
+                <button>Dodaj wizytę</button>
+            </a></td>
             <td><a href="/patient/delete/${patient.id}">
                 <button>delete</button>
             </a></td>
