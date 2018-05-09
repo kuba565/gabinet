@@ -12,22 +12,19 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/patient")
-public class ListPatientController {
+public class SearchResultController {
+
     @Autowired
     HttpSession session;
 
     @Autowired
     private PatientRepository patientRepository;
 
-    @RequestMapping("/list")
-    public String tweetsList(Model model) {
-        String adminUsername = (String) session.getAttribute("adminUsername");
-        List<Patient> patients = patientRepository.findAllByAdmin_Login(adminUsername);
-
-        model.addAttribute("patientsList", patients);
-
-        return "patient-list";
+    @RequestMapping("/search/result")
+    public String tweetsList() {
+        return "search-results";
     }
 
 
 }
+

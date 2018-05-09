@@ -15,6 +15,12 @@ public class Patient {
 
     private String lastName;
 
+    private String pesel;
+
+    private String phoneNumber;
+
+    private String address;
+
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date birthDate;
 
@@ -105,5 +111,29 @@ public class Patient {
 
     public void setNextVisit(Date nextVisit) {
         this.nextVisit = nextVisit;
+    }
+
+    public String getPesel() {
+        return pesel;
+    }
+
+    public void setPesel(String pesel) {
+        this.pesel = pesel;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

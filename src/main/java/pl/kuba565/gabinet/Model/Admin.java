@@ -21,7 +21,7 @@ public class Admin {
 
     private String lastName;
 
-    @OneToMany(mappedBy = "admin", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "admin", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private Set<Patient> patientSet = new HashSet<>();
 
     public Admin() {

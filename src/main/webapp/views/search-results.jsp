@@ -22,7 +22,7 @@
             <td>data urodzenia</td>
         </tr>
             <%--@elvariable id="patient" type="pl.coderslab.model.Patient"--%>
-        <c:forEach items="${patientsList}" var="patient">
+        <c:forEach items="${sessionScope.searchResults}" var="patient">
             <tr>
                 <td>${patient.name}</td>
                 <td>${patient.lastName}</td>

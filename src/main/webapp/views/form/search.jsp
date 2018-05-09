@@ -4,22 +4,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>Title</title>
 </head>
-<body>
-<a href="/">Homepage</a>
+<body><a href="/">Homepage</a>
 <br>
 <c:if test="${sessionScope.adminUsername==null}">
     <a href="/admin/login">Login</a> | <a href="/admin/registration">Register</a>
 </c:if>
 
 <c:if test="${sessionScope.adminUsername!=null}">
-
-    <a href="admin/logout">
-        <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
-    </a>
     <%--@elvariable id="patient" type="pl.coderslab.model.Patient"--%>
     <form:form modelAttribute="patient">
+
 
         <label for="name">Imię:</label>
         <br>
@@ -31,29 +27,11 @@
         <form:input path="lastName"/>
         <br>
 
-        <label for="birthDateString">Data urodzenia:</label>
-        <br>
-        <form:input type="date" path="birthDateString"/>
-        <br>
-
         <label for="pesel">Pesel:</label>
         <br>
         <form:input type="number" path="pesel"/>
         <br>
-
-        <label for="phoneNumber">Numer telefonu:</label>
-        <br>
-        <form:input type="number" path="phoneNumber"/>
-        <br>
-
-        <label for="address">Adres:</label>
-        <br>
-        <form:input type="text" path="address"/>
-        <br>
-
-        <button type="submit">Zarejestruj</button>
-        <br>
-        <form:errors path="*"/>
+        <button type="submit">Szukaj</button>
     </form:form>
 </c:if>
 </body>
