@@ -6,9 +6,6 @@
 </head>
 <body>
 <a href="/">Homepage</a>
-<a href="admin/logout">
-    <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
-</a>
 <%--@elvariable id="admin" type="pl.coderslab.model.Admin"--%>
 <form:form modelAttribute="admin">
 

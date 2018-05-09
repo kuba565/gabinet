@@ -12,7 +12,7 @@
 </c:if>
 
 <c:if test="${sessionScope.adminUsername!=null}">
-    <a href="admin/logout">
+    <a href="/admin/logout">
         <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
     </a>
     <table>
