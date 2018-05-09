@@ -1,8 +1,9 @@
 package pl.kuba565.gabinet.Model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.validation.constraints.NotEmpty;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Admin {
@@ -11,6 +12,7 @@ public class Admin {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty
     private String login;
 
     private String password;
@@ -19,10 +21,18 @@ public class Admin {
 
     private String lastName;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Patient> patientList  = new ArrayList<>();
+    @OneToMany(mappedBy = "admin", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<Patient> patientSet = new HashSet<>();
 
     public Admin() {
+    }
+
+    public Set<Patient> getPatientSet() {
+        return patientSet;
+    }
+
+    public void setPatientSet(Set<Patient> patientSet) {
+        this.patientSet = patientSet;
     }
 
     public Long getId() {
@@ -65,11 +75,5 @@ public class Admin {
         this.lastName = lastName;
     }
 
-    public List<Patient> getPatientList() {
-        return patientList;
-    }
 
-    public void setPatientList(List<Patient> patientList) {
-        this.patientList = patientList;
-    }
 }

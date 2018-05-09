@@ -1,8 +1,11 @@
 package pl.kuba565.gabinet.Model;
 
-import javax.persistence.*;
-import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.*;
+import java.sql.Date;
+
+@Entity
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,12 +15,56 @@ public class Patient {
 
     private String lastName;
 
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date birthDate;
 
+    private String birthDateString;
+
+    private String nextVisitString;
+
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date nextVisit;
+
+    private String medicalHistory;
 
 
     public Patient() {
+    }
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Admin admin;
+
+    public String getBirthDateString() {
+        return birthDateString;
+    }
+
+    public String getMedicalHistory() {
+        return medicalHistory;
+    }
+
+    public void setMedicalHistory(String medicalHistory) {
+        this.medicalHistory = medicalHistory;
+    }
+
+    public void setBirthDateString(String birthDateString) {
+        this.birthDateString = birthDateString;
+    }
+
+    public String getNextVisitString() {
+        return nextVisitString;
+    }
+
+    public void setNextVisitString(String nextVisitString) {
+        this.nextVisitString = nextVisitString;
+    }
+
+
+    public Admin getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
     }
 
     public Long getId() {

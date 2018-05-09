@@ -1,16 +1,29 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: jakub
-  Date: 08.05.18
-  Time: 11:56
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Login</title>
 </head>
 <body>
+<a href="/">Homepage</a>
+<a href="admin/logout">
+    <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
+</a>
+<%--@elvariable id="admin" type="pl.coderslab.model.Admin"--%>
+<form:form modelAttribute="admin">
 
+    <label for="login">Nazwa uzytkownika:</label>
+    <br>
+    <form:input path="login"/>
+    <br>
+    <label for="password">Haslo:</label>
+    <br>
+    <form:password path="password"/>
+    <br>
+
+    <button type="submit">Zarejestruj</button>
+    <br>
+    <form:errors path="*"/>
+</form:form>
 </body>
 </html>
