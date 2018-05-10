@@ -35,7 +35,7 @@ public class VisitListController {
 
         patients.removeIf(o -> o.getNextVisitDateString() == null);
 
-        for (Iterator<Patient> it = patients.iterator(); it.hasNext();) {
+        for (Iterator<Patient> it = patients.iterator(); it.hasNext(); ) {
             String userDateString = it.next().getNextVisitDateString();
 
             Date userDate = null;

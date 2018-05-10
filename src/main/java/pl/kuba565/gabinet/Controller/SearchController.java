@@ -1,5 +1,6 @@
 package pl.kuba565.gabinet.Controller;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,15 +45,36 @@ public class SearchController {
 
         Admin admin = adminRepository.getAdminByLogin(adminLogin);
 
-        if (!patient.getLastName().equals("")) {
+        Boolean onlyLastName = !patient.getLastName().equals("") && patient.getName().equals("") && patient.getPesel().equals("");
+        Boolean onlyPesel = patient.getLastName().equals("") && patient.getName().equals("") && !patient.getPesel().equals("");
+        Boolean onlyName = patient.getLastName().equals("") && !patient.getName().equals("") && patient.getPesel().equals("");
+
+        Boolean peselAndName = patient.getLastName().equals("") && !patient.getName().equals("") && !patient.getPesel().equals("");
+        Boolean peselAndLastName = !patient.getLastName().equals("") && patient.getName().equals("") && !patient.getPesel().equals("");
+        Boolean NameAndLastName = !patient.getLastName().equals("") && !patient.getName().equals("") && patient.getPesel().equals("");
+
+        Boolean peselAndNameAndLastName = !patient.getLastName().equals("") && !patient.getName().equals("") && !patient.getPesel().equals("");
+
+        String patientLastName = patient.getLastName();
+        String patientPesel = patient.getPesel();
+        String patientName = patient.getName();
+
+        if (onlyLastName) {
             searchResults = patientRepository.findByLastNameAndAdmin(patient.getLastName(), admin);
-        }
-        if (!patient.getName().equals("")) {
+        } else if (onlyName) {
             searchResults = patientRepository.findByNameAndAdmin(patient.getName(), admin);
-        }
-        if (!patient.getPesel().equals("")) {
+        } else if (onlyPesel) {
             searchResults = patientRepository.findByPeselAndAdmin(patient.getPesel(), admin);
+        } else if (peselAndName) {
+            searchResults = patientRepository.findByPeselAndAdminAndName(patientPesel, admin, patientName);
+        } else if (peselAndLastName) {
+            searchResults = patientRepository.findByPeselAndAdminAndLastName(patientPesel, admin, patientLastName);
+        } else if (NameAndLastName) {
+            searchResults = patientRepository.findByNameAndAdminAndLastName(patientName, admin, patientLastName);
+        } else if (peselAndNameAndLastName) {
+            searchResults = patientRepository.findByNameAndAdminAndPeselAndLastName(patientName, admin, patientPesel, patientLastName);
         }
+
         session.setAttribute("searchResults", searchResults);
         return "redirect:/patient/search/result";
     }
