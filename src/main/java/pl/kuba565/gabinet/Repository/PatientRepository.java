@@ -15,4 +15,6 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
     List<Patient> findByNameAndAdmin(String name, Admin admin);
 
     List<Patient> findByPeselAndAdmin(String pesel, Admin admin);
+
+    List<Patient> findAllByAdmin_LoginOrderByNextVisitDateStringAscNextVisitHourStringAsc(String adminUsername);
 }

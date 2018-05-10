@@ -19,7 +19,7 @@
     <a href="patient/add">dodaj pacjenta</a> | <a
         href="patient/list">wyświetl listę pacjentów</a> | <a
         href="patient/search">szukaj pacjenta</a> | <a
-        href="patient/visit/list">następne wizyty</a>
+        href="visit/list">następne wizyty</a>
 </c:if>
 </body>
 </html>

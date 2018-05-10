@@ -19,14 +19,15 @@
         <tr>
             <td>imię</td>
             <td>nazwisko</td>
-            <td>data urodzenia</td>
+            <td>Następna wizyta</td>
         </tr>
             <%--@elvariable id="patient" type="pl.coderslab.model.Patient"--%>
-        <c:forEach items="${patientsList}" var="patient">
+        <c:forEach items="${visitsList}" var="patient">
             <tr>
                 <td>${patient.name}</td>
                 <td>${patient.lastName}</td>
-                <td>${patient.birthDate}</td>
+                <td>${patient.nextVisitDateString}</td>
+                <td>${patient.nextVisitHourString}</td>
                 <td><a href="/patient/info/${patient.id}">
                     <button>info</button>
                 </a></td>
