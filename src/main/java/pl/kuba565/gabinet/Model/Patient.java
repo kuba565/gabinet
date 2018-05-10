@@ -3,7 +3,11 @@ package pl.kuba565.gabinet.Model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.Past;
 import java.sql.Date;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
 public class Patient {
@@ -26,10 +30,10 @@ public class Patient {
 
     private String birthDateString;
 
-    private String nextVisitString;
+    private String nextVisitDateString;
 
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
-    private Date nextVisit;
+    private String nextVisitHourString;
+
 
     private String medicalHistory;
 
@@ -39,6 +43,22 @@ public class Patient {
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Admin admin;
+
+    public String getNextVisitDateString() {
+        return nextVisitDateString;
+    }
+
+    public void setNextVisitDateString(String nextVisitDateString) {
+        this.nextVisitDateString = nextVisitDateString;
+    }
+
+    public String getNextVisitHourString() {
+        return nextVisitHourString;
+    }
+
+    public void setNextVisitHourString(String nextVisitHourString) {
+        this.nextVisitHourString = nextVisitHourString;
+    }
 
     public String getBirthDateString() {
         return birthDateString;
@@ -55,15 +75,6 @@ public class Patient {
     public void setBirthDateString(String birthDateString) {
         this.birthDateString = birthDateString;
     }
-
-    public String getNextVisitString() {
-        return nextVisitString;
-    }
-
-    public void setNextVisitString(String nextVisitString) {
-        this.nextVisitString = nextVisitString;
-    }
-
 
     public Admin getAdmin() {
         return admin;
@@ -103,14 +114,6 @@ public class Patient {
 
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
-    }
-
-    public Date getNextVisit() {
-        return nextVisit;
-    }
-
-    public void setNextVisit(Date nextVisit) {
-        this.nextVisit = nextVisit;
     }
 
     public String getPesel() {

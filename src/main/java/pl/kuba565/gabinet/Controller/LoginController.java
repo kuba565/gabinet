@@ -38,6 +38,7 @@ public class LoginController {
 
             session.invalidate();
             session.setAttribute("adminUsername", checkAdmin.getLogin());
+            session.setAttribute("admin", checkAdmin);
             return "redirect:/";
         } else {
             return "form/login";

@@ -25,6 +25,7 @@
             <td>PESEL</td>
             <td>Numer telefonu</td>
             <td>Adres</td>
+            <td>Następna wizyta</td>
         </tr>
 
 
@@ -36,7 +37,9 @@
             <td>${patient.pesel}</td>
             <td>${patient.phoneNumber}</td>
             <td>${patient.address}</td>
-            <td><a href="/patient/visit/add/${patient.id}">
+            <td>${patient.nextVisitDateString}</td>
+            <td>${patient.nextVisitHourString}</td>
+            <td><a href="/patient/info/${patient.id}/add-visit">
                 <button>Dodaj wizytę</button>
             </a></td>
             <td><a href="/patient/delete/${patient.id}">
