@@ -3,12 +3,21 @@
 <html>
 <head>
     <title>Wirtualny Gabinet</title>
+    <style>
+        table, td, th, tr {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th {
+            background-color: #ccc;
+        }
+    </style>
 </head>
 <body>
-<a href="/">Homepage</a>
+<a href="/"><button>Homepage</button></a>
 <br>
 <c:if test="${sessionScope.adminUsername==null}">
-    <a href="/admin/login">Login</a> | <a href="/admin/registration">Register</a>
+    <a href="/admin/login"><button>Login</button></a> | <a href="/admin/registration"><button>Register</button></a>
 </c:if>
 
 <c:if test="${sessionScope.adminUsername!=null}">

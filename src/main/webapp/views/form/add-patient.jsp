@@ -7,10 +7,10 @@
     <title>Wirtualny Gabinet</title>
 </head>
 <body>
-<a href="/">Homepage</a>
+<a href="/"><button>Homepage</button></a>
 <br>
 <c:if test="${sessionScope.adminUsername==null}">
-    <a href="/admin/login">Login</a> | <a href="/admin/registration">Register</a>
+    <a href="/admin/login"><button>Login</button></a> | <a href="/admin/registration"><button>Register</button></a>
 </c:if>
 
 <c:if test="${sessionScope.adminUsername!=null}">
@@ -18,6 +18,8 @@
     <a href="/admin/logout">
         <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
     </a>
+    <p>Dodaj pacjenta:</p>
+    <br>
     <%--@elvariable id="patient" type="pl.coderslab.model.Patient"--%>
     <form:form modelAttribute="patient">
 

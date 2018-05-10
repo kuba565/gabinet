@@ -7,7 +7,7 @@
 <body>
 
 <c:if test="${sessionScope.adminUsername==null}">
-    <a href="/admin/login">Login</a> | <a href="/admin/registration">Register</a>
+    <a href="/admin/login"><button>Login</button></a> | <a href="/admin/registration"><button>Register</button></a>
 </c:if>
 
 <c:if test="${sessionScope.adminUsername!=null}">
@@ -16,10 +16,10 @@
         <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
     </a>
     <br>
-    <a href="patient/add">dodaj pacjenta</a> | <a
-        href="patient/list">wyświetl listę pacjentów</a> | <a
-        href="patient/search">szukaj pacjenta</a> | <a
-        href="visit/list">następne wizyty</a>
+    <a href="patient/add"><button>dodaj pacjenta</button></a> | <a
+        href="patient/list"><button>wyświetl listę pacjentów</button></a> | <a
+        href="patient/search"><button>szukaj pacjenta</button></a> | <a
+        href="visit/list"><button>następne wizyty</button></a>
 </c:if>
 </body>
 </html>

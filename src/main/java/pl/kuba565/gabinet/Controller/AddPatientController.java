@@ -41,8 +41,11 @@ public class AddPatientController {
             return "form/add-patient";
         }
 
-        Date birthDate = Date.valueOf(patient.getBirthDateString());
-        patient.setBirthDate(birthDate);
+        if (!patient.getBirthDateString().equals("")) {
+            Date birthDate = Date.valueOf(patient.getBirthDateString());
+            patient.setBirthDate(birthDate);
+        }
+
 
         String adminLogin = (String) session.getAttribute("adminUsername");
         Admin admin = adminRepository.getAdminByLogin(adminLogin);

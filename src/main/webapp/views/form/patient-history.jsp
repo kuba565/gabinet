@@ -6,10 +6,10 @@
     <title>Wirtualny Gabinet</title>
 </head>
 <body>
-<a href="/">Homepage</a>
+<a href="/"><button>Homepage</button></a>
 <br>
 <c:if test="${sessionScope.adminUsername==null}">
-    <a href="/admin/login">Login</a> | <a href="/admin/registration">Register</a>
+    <a href="/admin/login"><button>Login</button></a> | <a href="/admin/registration"><button>Register</button></a>
 </c:if>
 <c:if test="${sessionScope.adminUsername!=null}">
     <a href="/admin/logout">
@@ -17,13 +17,13 @@
     </a>
 
     <h1>${patient.name} ${patient.lastName}</h1>
-
+    <p>Historia choroby</p>
     <br>
     <form method="post">
         <label>
             <button type="submit">zapisz zmiany</button>
             <br>
-            <textarea name="medicalhistory" rows="50" cols="100">${patient.medicalHistory}</textarea>
+            <textarea name="medicalhistory" rows="30" cols="100">${patient.medicalHistory}</textarea>
         </label>
 
     </form>

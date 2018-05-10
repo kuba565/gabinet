@@ -5,7 +5,7 @@
     <title>Wirtualny Gabinet</title>
 </head>
 <body>
-<a href="/">Homepage</a>
+<a href="/"><button>Homepage</button></a>
 <%--@elvariable id="admin" type="pl.coderslab.model.Admin"--%>
 <form:form modelAttribute="admin">
 
@@ -18,7 +18,7 @@
     <form:password path="password"/>
     <br>
 
-    <button type="submit">Zarejestruj</button>
+    <button type="submit">Zaloguj</button>
     <br>
     <form:errors path="*"/>
 </form:form>

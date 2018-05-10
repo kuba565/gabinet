@@ -5,7 +5,7 @@
     <title>Wirtualny Gabinet</title>
 </head>
 <body>
-<a href="/">Homepage</a>
+<a href="/"><button>Homepage</button></a>
 <a href="/admin/logout">
     <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
 </a>

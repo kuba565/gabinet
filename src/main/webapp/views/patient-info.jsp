@@ -4,12 +4,21 @@
 <html>
 <head>
     <title>Wirtualny Gabinet</title>
+    <style>
+        table, td, th, tr {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th {
+            background-color: #ccc;
+        }
+    </style>
 </head>
 <body>
-<a href="/">Homepage</a>
+<a href="/"><button>Homepage</button></a> | <a href="/patient/list"><button>Lista pacjentów</button></a>
 <br>
 <c:if test="${sessionScope.adminUsername==null}">
-    <a href="/admin/login">Login</a> | <a href="/admin/registration">Register</a>
+    <a href="/admin/login"><button>Login</button></a> | <a href="/admin/registration"><button>Register</button></a>
 </c:if>
 
 <c:if test="${sessionScope.adminUsername!=null}">
@@ -54,7 +63,7 @@
 
     <form method="post">
         <label>
-            <textarea name="medicalhistory" rows="50" cols="100" readonly>${patient.medicalHistory}</textarea>
+            <textarea name="medicalhistory" rows="30" cols="100" readonly>${patient.medicalHistory}</textarea>
         </label>
     </form>
     <br>
