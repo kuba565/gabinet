@@ -41,6 +41,7 @@ public class LoginController {
             session.setAttribute("admin", checkAdmin);
             return "redirect:/";
         } else {
+            session.setAttribute("loginInfo", "Nieprawidłowy login lub hasło");
             return "form/login";
         }
     }
