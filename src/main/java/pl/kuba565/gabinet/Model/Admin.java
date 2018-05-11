@@ -13,7 +13,6 @@ public class Admin {
     private Long id;
 
     @NotEmpty
-    @Column(unique = true)
     private String login;
 
     private String password;

@@ -33,10 +33,16 @@ public class RegisterController {
         if (result.hasErrors()) {
             return "form/registration";
         }
+        Admin check = adminRepository.getAdminByLogin(admin.getLogin());
 
-        String hashed = BCrypt.hashpw(admin.getPassword(), BCrypt.gensalt());
-        admin.setPassword(hashed);
-        adminRepository.save(admin);
-        return "redirect:/";
+        if (check == null) {
+            String hashed = BCrypt.hashpw(admin.getPassword(), BCrypt.gensalt());
+            admin.setPassword(hashed);
+            adminRepository.save(admin);
+            return "redirect:/";
+        }
+
+
+        return "form/registration";
     }
 }
