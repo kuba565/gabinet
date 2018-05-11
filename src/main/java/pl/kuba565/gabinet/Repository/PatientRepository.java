@@ -10,19 +10,20 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
 
     List<Patient> findAllByAdmin_Login(String adminUsername);
 
-    List<Patient> findByLastNameAndAdmin(String lastName, Admin admin);
+    List<Patient> findByLastNameIgnoreCaseContainingAndAdmin(String lastName, Admin admin);
 
-    List<Patient> findByNameAndAdmin(String name, Admin admin);
+    List<Patient> findByNameIgnoreCaseContainingAndAdmin(String name, Admin admin);
 
-    List<Patient> findByPeselAndAdmin(String pesel, Admin admin);
+    List<Patient> findByPeselIgnoreCaseContainingAndAdmin(String pesel, Admin admin);
 
-    List<Patient> findByPeselAndAdminAndName(String pesel, Admin admin, String name);
+    List<Patient> findByPeselIgnoreCaseContainingAndAdminAndNameIgnoreCaseContaining(String pesel, Admin admin, String name);
 
-    List<Patient> findByPeselAndAdminAndLastName(String pesel, Admin admin, String LastName);
+    List<Patient> findByPeselIgnoreCaseContainingAndAdminAndLastNameIgnoreCaseContaining(String pesel, Admin admin, String LastName);
 
-    List<Patient> findByNameAndAdminAndLastName(String name, Admin admin, String lastName);
+    List<Patient> findByNameIgnoreCaseContainingAndAdminAndLastNameIgnoreCaseContaining(String name, Admin admin, String lastName);
 
-    List<Patient> findByNameAndAdminAndPeselAndLastName(String name, Admin admin,String pesel, String lastName);
+    List<Patient> findByNameIgnoreCaseContainingAndAdminAndPeselIgnoreCaseContainingAndLastNameIgnoreCaseContaining(String name, Admin admin,String pesel, String lastName);
 
     List<Patient> findAllByAdmin_LoginOrderByNextVisitDateStringAscNextVisitHourStringAsc(String adminUsername);
+
 }

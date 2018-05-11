@@ -60,19 +60,19 @@ public class SearchController {
         String patientName = patient.getName();
 
         if (onlyLastName) {
-            searchResults = patientRepository.findByLastNameAndAdmin(patient.getLastName(), admin);
+            searchResults = patientRepository.findByLastNameIgnoreCaseContainingAndAdmin(patientLastName, admin);
         } else if (onlyName) {
-            searchResults = patientRepository.findByNameAndAdmin(patient.getName(), admin);
+            searchResults = patientRepository.findByNameIgnoreCaseContainingAndAdmin(patientName, admin);
         } else if (onlyPesel) {
-            searchResults = patientRepository.findByPeselAndAdmin(patient.getPesel(), admin);
+            searchResults = patientRepository.findByPeselIgnoreCaseContainingAndAdmin(patientPesel, admin);
         } else if (peselAndName) {
-            searchResults = patientRepository.findByPeselAndAdminAndName(patientPesel, admin, patientName);
+            searchResults = patientRepository.findByPeselIgnoreCaseContainingAndAdminAndNameIgnoreCaseContaining(patientPesel, admin, patientName);
         } else if (peselAndLastName) {
-            searchResults = patientRepository.findByPeselAndAdminAndLastName(patientPesel, admin, patientLastName);
+            searchResults = patientRepository.findByPeselIgnoreCaseContainingAndAdminAndLastNameIgnoreCaseContaining(patientPesel, admin, patientLastName);
         } else if (NameAndLastName) {
-            searchResults = patientRepository.findByNameAndAdminAndLastName(patientName, admin, patientLastName);
+            searchResults = patientRepository.findByNameIgnoreCaseContainingAndAdminAndLastNameIgnoreCaseContaining(patientName, admin, patientLastName);
         } else if (peselAndNameAndLastName) {
-            searchResults = patientRepository.findByNameAndAdminAndPeselAndLastName(patientName, admin, patientPesel, patientLastName);
+            searchResults = patientRepository.findByNameIgnoreCaseContainingAndAdminAndPeselIgnoreCaseContainingAndLastNameIgnoreCaseContaining(patientName, admin, patientPesel, patientLastName);
         }
 
         session.setAttribute("searchResults", searchResults);
