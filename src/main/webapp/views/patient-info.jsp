@@ -66,7 +66,7 @@
 
     <form method="post">
         <label>
-            <textarea name="medicalhistory" rows="30" cols="100" readonly>${patient.medicalHistory}</textarea>
+            <textarea name="medicalhistory" rows="25" cols="100" readonly>${patient.medicalHistory}</textarea>
         </label>
     </form>
     <br>

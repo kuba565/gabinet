@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -30,7 +31,11 @@ public class VisitListController {
         String adminUsername = (String) session.getAttribute("adminUsername");
         List<Patient> patients = patientRepository.findAllByAdmin_LoginOrderByNextVisitDateStringAscNextVisitHourStringAsc(adminUsername);
 
-        Date date = new Date();
+        Date dt = new Date();
+        Calendar c = Calendar.getInstance();
+        c.setTime(dt);
+        c.add(Calendar.DATE, -1);
+        dt = c.getTime();
         DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
         patients.removeIf(o -> o.getNextVisitDateString() == null);
@@ -45,7 +50,7 @@ public class VisitListController {
                 e.printStackTrace();
             }
 
-            if (userDate.before(date))
+            if (userDate.before(dt))
                 it.remove();
         }
 

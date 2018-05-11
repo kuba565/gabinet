@@ -23,7 +23,7 @@
         <label>
             <button type="submit">zapisz zmiany</button>
             <br>
-            <textarea name="medicalhistory" rows="30" cols="100">${patient.medicalHistory}</textarea>
+            <textarea name="medicalhistory" rows="25" cols="100">${patient.medicalHistory}</textarea>
         </label>
 
     </form>
