@@ -17,7 +17,7 @@
     </a>
 
     <h1>${patient.name} ${patient.lastName}</h1>
-    <p>Historia choroby</p>
+    <h2>Historia choroby</h2>
     <br>
     <form method="post">
         <label>

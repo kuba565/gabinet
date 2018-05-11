@@ -24,6 +24,8 @@
     <a href="/admin/logout">
         <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
     </a>
+    <h2>Lista pacjentów</h2>
+    <br>
     <table>
         <tr>
             <td>imię</td>

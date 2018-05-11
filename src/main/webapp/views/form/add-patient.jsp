@@ -18,7 +18,7 @@
     <a href="/admin/logout">
         <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
     </a>
-    <p>Dodaj pacjenta:</p>
+    <h2>Dodaj pacjenta:</h2>
     <br>
     <%--@elvariable id="patient" type="pl.coderslab.model.Patient"--%>
     <form:form modelAttribute="patient">
@@ -53,7 +53,7 @@
         <form:input type="text" path="address"/>
         <br>
 
-        <button type="submit">Zarejestruj</button>
+        <button type="submit">Zapis pacjenta</button>
         <br>
         <form:errors path="*"/>
     </form:form>

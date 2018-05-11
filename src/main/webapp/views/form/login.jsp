@@ -6,6 +6,8 @@
 </head>
 <body>
 <a href="/"><button>Homepage</button></a>
+<h2>Logowanie</h2>
+<br>
 <%--@elvariable id="admin" type="pl.coderslab.model.Admin"--%>
 <form:form modelAttribute="admin">
 

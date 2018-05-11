@@ -24,6 +24,8 @@
     <a href="/admin/logout">
         <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
     </a>
+    <h2>Następne wizyty</h2>
+    <br>
     <table>
         <tr>
             <td>imię</td>
@@ -35,8 +37,7 @@
             <tr>
                 <td>${patient.name}</td>
                 <td>${patient.lastName}</td>
-                <td>${patient.nextVisitDateString}</td>
-                <td>${patient.nextVisitHourString}</td>
+                <td>${patient.nextVisitDateString} ${patient.nextVisitHourString}</td>
                 <td><a href="/patient/info/${patient.id}">
                     <button>info</button>
                 </a></td>

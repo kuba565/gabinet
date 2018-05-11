@@ -25,7 +25,8 @@
     <a href="/admin/logout">
         <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
     </a>
-
+    <h2>Informacje o pacjencie</h2>
+<br>
     <table>
         <tr>
             <td>imię</td>
@@ -51,7 +52,10 @@
                 <button>Dodaj wizytę</button>
             </a></td>
             <td><a href="/patient/delete/${patient.id}">
-                <button>delete</button>
+                <button>usuń</button>
+            </a></td>
+            <td><a href="/patient/edit/${patient.id}">
+                <button>edytuj</button>
             </a></td>
         </tr>
     </table>

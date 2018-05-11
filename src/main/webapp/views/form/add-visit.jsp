@@ -16,8 +16,8 @@
         <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
     </a>
 
-    <h3>${patient.name} ${patient.lastName}</h3>
-    Dodaj wizytę
+    <h2>Dodaj wizytę</h2>
+    <p>${patient.name} ${patient.lastName}</p>
     <br>
     <form method="post">
         <label>

@@ -44,6 +44,7 @@ public class Patient {
     @ManyToOne(fetch = FetchType.EAGER)
     private Admin admin;
 
+
     public String getNextVisitDateString() {
         return nextVisitDateString;
     }

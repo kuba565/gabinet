@@ -8,6 +8,7 @@
             border: 1px solid black;
             border-collapse: collapse;
         }
+
         th {
             background-color: #ccc;
         }
@@ -17,32 +18,41 @@
 <a href="/"><button>Homepage</button></a>
 <br>
 <c:if test="${sessionScope.adminUsername==null}">
-    <a href="/admin/login"><button>Login</button></a> | <a href="/admin/registration"><button>Register</button></a>
+    <a href="/admin/login">
+        <button>Login</button>
+    </a> | <a href="/admin/registration">
+    <button>Register</button>
+</a>
 </c:if>
 
 <c:if test="${sessionScope.adminUsername!=null}">
     <a href="/admin/logout">
         <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
     </a>
-    <table>
-        <tr>
-            <td>imię</td>
-            <td>nazwisko</td>
-            <td>data urodzenia</td>
-        </tr>
-            <%--@elvariable id="patient" type="pl.coderslab.model.Patient"--%>
-        <c:forEach items="${sessionScope.searchResults}" var="patient">
-            <tr>
-                <td>${patient.name}</td>
-                <td>${patient.lastName}</td>
-                <td>${patient.birthDate}</td>
-                <td><a href="/patient/info/${patient.id}">
-                    <button>info</button>
-                </a></td>
-            </tr>
-        </c:forEach>
+    <h2>Wyniki wyszukiwania</h2>
+    <br>
+    <c:if test="${sessionScope.searchResults.size()>0}">
 
-    </table>
+        <table>
+            <tr>
+                <td>imię</td>
+                <td>nazwisko</td>
+                <td>data urodzenia</td>
+            </tr>
+                <%--@elvariable id="patient" type="pl.coderslab.model.Patient"--%>
+            <c:forEach items="${sessionScope.searchResults}" var="patient">
+                <tr>
+                    <td>${patient.name}</td>
+                    <td>${patient.lastName}</td>
+                    <td>${patient.birthDate}</td>
+                    <td><a href="/patient/info/${patient.id}">
+                        <button>info</button>
+                    </a></td>
+                </tr>
+            </c:forEach>
+
+        </table>
+    </c:if>
     <hr>
     ilość znalezionych elementów: ${sessionScope.searchResults.size()}
     <hr>

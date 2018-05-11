@@ -9,7 +9,8 @@
 <a href="/admin/logout">
     <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
 </a>
-
+<h2>Rejestracja lekarza</h2>
+<br>
 <%--@elvariable id="admin" type="pl.coderslab.model.Admin"--%>
 <form:form modelAttribute="admin">
 

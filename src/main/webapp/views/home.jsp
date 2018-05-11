@@ -5,7 +5,7 @@
     <title>Wirtualny Gabinet</title>
 </head>
 <body>
-
+<h2>Wirtualny Gabinet</h2>
 <c:if test="${sessionScope.adminUsername==null}">
     <a href="/admin/login"><button>Login</button></a> | <a href="/admin/registration"><button>Register</button></a>
 </c:if>
