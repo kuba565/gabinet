@@ -11,7 +11,6 @@ import pl.kuba565.gabinet.Model.Patient;
 import pl.kuba565.gabinet.Repository.PatientRepository;
 
 import javax.servlet.http.HttpServletRequest;
-import java.sql.Date;
 
 @Controller
 @RequestMapping("/patient")

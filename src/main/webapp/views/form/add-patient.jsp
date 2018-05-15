@@ -18,7 +18,7 @@
     <a href="/admin/logout">
         <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
     </a>
-    <h2>Dodaj pacjenta:</h2>
+    <h2>Dodaj pacjenta</h2>
     <br>
     <%--@elvariable id="patient" type="pl.coderslab.model.Patient"--%>
     <form:form modelAttribute="patient">
