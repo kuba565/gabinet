@@ -9,7 +9,9 @@
     <packaging>jar</packaging>
 
     <name>gabinet</name>
-    <description></description>
+    <description>A web application which may be used to manage the doctor's work, patients data, etc. Still in
+        development stage.
+    </description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

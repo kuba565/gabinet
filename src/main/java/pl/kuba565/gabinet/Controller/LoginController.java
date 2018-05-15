@@ -25,6 +25,8 @@ public class LoginController {
 
     @GetMapping("/login")
     String loginForm(Model model) {
+        
+
         model.addAttribute("admin", new Admin());
         return "form/login";
     }
@@ -32,17 +34,21 @@ public class LoginController {
     @PostMapping("/login")
     String login(@Valid Admin admin) {
 
-        Admin checkAdmin = adminRepository.getAdminByLogin(admin.getLogin());
+        if (adminRepository.getAdminByLogin(admin.getLogin()) != null) {
 
-        if (BCrypt.checkpw(admin.getPassword(), checkAdmin.getPassword())) {
+            Admin checkAdmin = adminRepository.getAdminByLogin(admin.getLogin());
+            if (BCrypt.checkpw(admin.getPassword(), checkAdmin.getPassword())) {
 
-            session.invalidate();
-            session.setAttribute("adminUsername", checkAdmin.getLogin());
-            session.setAttribute("admin", checkAdmin);
-            return "redirect:/";
+                session.invalidate();
+                session.setAttribute("adminUsername", checkAdmin.getLogin());
+                session.setAttribute("admin", checkAdmin);
+                return "redirect:/";
+            }
         } else {
             session.setAttribute("loginInfo", "Nieprawidłowy login lub hasło");
-            return "form/login";
+
         }
+
+        return "redirect:/admin/login";
     }
 }
