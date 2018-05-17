@@ -13,7 +13,7 @@ Including functionalities such as:
 
 ### Prerequisites
 
-You need a MySQL database created with "gabinet" name.
+You need a MySQL database created with "gabinet" name, "root" username and "coderslab" password.
 
 
 ## Built With
