@@ -12,7 +12,7 @@
 </head>
 <body>
 <a href="/">
-    <button>Homepage</button>
+    <button>Strona główna</button>
 </a>
 <h2>Logowanie</h2>
 <br>

@@ -9,24 +9,36 @@
             border: 1px solid black;
             border-collapse: collapse;
         }
+
         th {
             background-color: #ccc;
         }
     </style>
 </head>
 <body>
-<a href="/"><button>Homepage</button></a> | <a href="/patient/list"><button>Lista pacjentów</button></a>
+
+
+<a href="/">
+    <button>Strona główna</button>
+</a>
 <br>
 <c:if test="${sessionScope.adminUsername==null}">
-    <a href="/admin/login"><button>Login</button></a> | <a href="/admin/registration"><button>Register</button></a>
+    <a href="/admin/login">
+        <button>Logowanie</button>
+    </a> | <a href="/admin/registration">
+    <button>Rejestracja</button>
+</a>
 </c:if>
 
 <c:if test="${sessionScope.adminUsername!=null}">
+
     <a href="/admin/logout">
-        <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
+        <button style="position: absolute;top: 0px;right: 0px;">Wyloguj</button>
     </a>
+
+
     <h2>Informacje o pacjencie</h2>
-<br>
+    <br>
     <table>
         <tr>
             <td>imię</td>
@@ -37,7 +49,6 @@
             <td>Adres</td>
             <td>Następna wizyta</td>
         </tr>
-
 
 
         <tr><%--@elvariable id="patient" type="pl.coderslab.model.Patient"--%>

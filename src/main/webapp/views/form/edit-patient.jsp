@@ -7,16 +7,16 @@
     <title>Wirtualny Gabinet</title>
 </head>
 <body>
-<a href="/"><button>Homepage</button></a>
+<a href="/"><button>Strona główna</button></a>
 <br>
 <c:if test="${sessionScope.adminUsername==null}">
-    <a href="/admin/login"><button>Login</button></a> | <a href="/admin/registration"><button>Register</button></a>
+    <a href="/admin/login"><button>Logowanie</button></a> | <a href="/admin/registration"><button>Rejestracja</button></a>
 </c:if>
 
 <c:if test="${sessionScope.adminUsername!=null}">
 
     <a href="/admin/logout">
-        <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
+        <button style="position: absolute;top: 0px;right: 0px;">Wyloguj</button>
     </a>
     <h2>Edytuj pacjenta:</h2>
     <br>

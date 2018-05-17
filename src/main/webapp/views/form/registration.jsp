@@ -5,9 +5,9 @@
     <title>Wirtualny Gabinet</title>
 </head>
 <body>
-<a href="/"><button>Homepage</button></a>
+<a href="/"><button>Strona główna</button></a>
 <a href="/admin/logout">
-    <button style="position: absolute;top: 0px;right: 0px;">Logout</button>
+    <button style="position: absolute;top: 0px;right: 0px;">Wyloguj</button>
 </a>
 <h2>Rejestracja lekarza</h2>
 <br>
