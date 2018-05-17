@@ -19,7 +19,7 @@ Including functionalities such as:
 ### How to run
 
 Enter the project's directory with terminal and run "mvn spring-boot:run" command.
-Click on this [link](http://localhost:8080) to enter the project's homepage.S
+Click on this [link](http://localhost:8080) to enter the project's homepage.
 
 
 
