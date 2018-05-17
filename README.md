@@ -5,7 +5,7 @@ An app providing a work-management-tool for MDs.
 Including functionalities such as:
 
 * Adding patients
-* Editing patients - including an editable text field for a patient's medical record
+* Editing patients - including an editable text field for patient's medical record
 * Deleting patients
 * Searching among patients
 * Adding visits to an organiser
