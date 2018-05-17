@@ -1,6 +1,6 @@
 # Gabinet - Doctor's work organiser
 
-An app providing a work-management-tool for a MD.
+An app providing a work-management-tool for MDs.
 
 Including functionalities such as:
 
