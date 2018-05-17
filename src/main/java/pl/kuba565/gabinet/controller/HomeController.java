@@ -1,4 +1,4 @@
-package pl.kuba565.gabinet.Controller;
+package pl.kuba565.gabinet.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

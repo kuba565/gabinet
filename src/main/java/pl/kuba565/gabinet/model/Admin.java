@@ -1,4 +1,4 @@
-package pl.kuba565.gabinet.Model;
+package pl.kuba565.gabinet.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;

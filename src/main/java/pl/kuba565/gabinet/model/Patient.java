@@ -1,13 +1,9 @@
-package pl.kuba565.gabinet.Model;
+package pl.kuba565.gabinet.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.Future;
-import javax.validation.constraints.Past;
 import java.sql.Date;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 @Entity
 public class Patient {
@@ -33,7 +29,6 @@ public class Patient {
     private String nextVisitDateString;
 
     private String nextVisitHourString;
-
 
     private String medicalHistory;
 

@@ -1,8 +1,8 @@
-package pl.kuba565.gabinet.Repository;
+package pl.kuba565.gabinet.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.kuba565.gabinet.Model.Admin;
-import pl.kuba565.gabinet.Model.Patient;
+import pl.kuba565.gabinet.model.Admin;
+import pl.kuba565.gabinet.model.Patient;
 
 import java.util.List;
 

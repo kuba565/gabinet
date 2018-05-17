@@ -1,12 +1,12 @@
-package pl.kuba565.gabinet.Controller;
+package pl.kuba565.gabinet.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.kuba565.gabinet.Model.Patient;
-import pl.kuba565.gabinet.Repository.PatientRepository;
+import pl.kuba565.gabinet.model.Patient;
+import pl.kuba565.gabinet.repository.PatientRepository;
 
 import javax.servlet.http.HttpSession;
 import java.text.DateFormat;
