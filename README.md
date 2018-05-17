@@ -13,7 +13,13 @@ Including functionalities such as:
 
 ### Prerequisites
 
-You need a MySQL database created with "gabinet" name, MySQL shall be configured with "root" username and "coderslab" password.
+* You need a MySQL database created with "gabinet" name, MySQL shall be configured with "root" username and "coderslab" password.
+* You will also need Maven installed
+
+### How to run
+
+Enter the project's directory with terminal and run "mvn spring-boot:run" command.
+
 
 
 ## Built With
