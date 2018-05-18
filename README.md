@@ -11,6 +11,10 @@ Including functionalities such as:
 * Adding visits to an organiser
 * Viewing upcoming visits
 
+[Click here](https://gabinet-by-kuba565.herokuapp.com/) to enter the deployed app.
+
+
+
 ### Prerequisites
 
 * You need a MySQL database created with "gabinet" name, MySQL shall be configured with "root" username and "coderslab" password.
