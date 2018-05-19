@@ -21,7 +21,7 @@
     <h1>${patient.name} ${patient.lastName}</h1>
     <h2>Historia choroby</h2>
     <br>
-    <form method="post">
+    <form>
         <label>
             <button type="submit">zapisz zmiany</button>
             <br>
