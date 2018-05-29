@@ -11,7 +11,7 @@ Including functionalities such as:
 * Adding visits to an organiser
 * Viewing upcoming visits
 
-[Click here](https://gabinet-by-kuba565.herokuapp.com/) to enter the deployed app.
+### [Click here](https://gabinet-by-kuba565.herokuapp.com/) to enter the deployed app.
 
 
 
